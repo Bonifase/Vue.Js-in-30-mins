@@ -19,6 +19,7 @@
   <hr />
   <label>First Name: </label><input type="text" v-model="user.first_name"><br>
   <label>Last Name: </label><input type="text" v-model="user.last_name">
+  <h2>{{full_name}}</h2>
 </div>
 </template>
 
@@ -43,6 +44,11 @@ export default {name: 'home',
     },
     presskey: function (e) {
       console.log(e.target.value)
+    }
+  },
+  computed: {
+    full_name: function () {
+      return this.user.first_name + ' ' + this.user.last_name
     }
   }
 }

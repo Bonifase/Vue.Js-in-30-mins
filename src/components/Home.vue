@@ -7,23 +7,19 @@
         <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-card v-for="fruit in fruits" v-bind:key="fruit">
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          height="200px"
-        >
-        </v-img>
-
         <v-card-title primary-title>
           <div>
             <div class="headline">{{fruit.name}} <h6 class="grey--text">Price: {{fruit.price}}</h6></div>
           </div>
         </v-card-title>
-
       </v-card>
     </v-flex>
   </v-layout>
   <button v-on:click="buy">Order Now</button>
-    </div>
+  <hr />
+  <label>First Name: </label><input type="text" v-model="user.first_name"><br>
+  <label>Last Name: </label><input type="text" v-model="user.last_name">
+</div>
 </template>
 
 <script>
@@ -37,23 +33,24 @@ export default {name: 'home',
       fruits: [
         {name: 'mango', price: 25},
         {name: 'orange', price: 30},
-        {name: 'grape', price: 50},
-        {name: 'aple', price: 45},
-        {name: 'banana', price: 15}
+        {name: 'grape', price: 50}
       ]
     }
   },
   methods: {
     buy: function () {
       alert('Your order is being processed')
+    },
+    presskey: function (e) {
+      console.log(e.target.value)
     }
   }
 }
 </script>
 
 <style scoped>
-ul li {
-    background: #cce5ff;
-    margin: 6px;
+button {
+    background: #85b7ee;
+    margin: 10px;
 }
 </style>
